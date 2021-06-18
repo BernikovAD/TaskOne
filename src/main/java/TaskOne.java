@@ -23,11 +23,11 @@ public class TaskOne {
     Так же вызов метода tester.getVacancy(); не может осуществиться, так как в объкте класса Employee нет метода такого
     */
     public static void main(String[] args) {
-        Employee tester = new Employee(7,"Developer");
+        Vacancy vacancy = new Vacancy ("Developer");
+        Employee tester = new Employee(7,vacancy);
 
         System.out.println(tester.getId());
-
-        System.out.println(tester.getNameVacancy ());
+        System.out.println(vacancy.getVacancy ());
     }
 
 }

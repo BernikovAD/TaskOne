@@ -1,20 +1,14 @@
 public class Employee {
     private long id;
-    private String nameVacancy;
     private Vacancy vacancy;
 
-    public Employee(long id, String nameVacancy) {
+    public Employee(long id, Vacancy vacancy) {
         this.id = id;
-        this.nameVacancy = nameVacancy;
-        vacancy = new Vacancy (nameVacancy);
+        this.vacancy = vacancy;
     }
 
     public long getId() {
         return id;
-    }
-
-    public String getNameVacancy() {
-        return vacancy.getVacancy ();
     }
 
 
