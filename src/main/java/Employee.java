@@ -2,9 +2,9 @@ public class Employee {
     private long id;
     private Vacancy vacancy;
 
-    public Employee(long id, String vacancy) {
+    public Employee(long id, Vacancy vacancy) {
         this.id = id;
-        this.vacancy = new Vacancy (vacancy);
+        this.vacancy = vacancy;
     }
 
     long getId() {
