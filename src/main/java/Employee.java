@@ -7,6 +7,11 @@ public class Employee {
         this.vacancy = vacancy;
     }
 
+    boolean drawsAPicture(){
+        System.out.println ("Сотрудник рисует картину");
+        return true;
+    }
+
     long getId() {
         return id;
     }

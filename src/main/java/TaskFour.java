@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Arrays;
 
 
@@ -8,28 +10,24 @@ public class TaskFour {
         Например в массиве { 1, 3, 4, 2, 6, 5 } суммой будет 3+4+2+5 = 14
         Сигнатура метода: public int sum(int[] array) {...*/
     public static void main(String[] args) {
-        int array1[] = {3, 5, 7, 12};  //12
-        int array2[] = {1, 3, 4, 2, 6, 5};  //14
-        int array3[] = {6, 7, 88, -1, 6, 5}; // 24
-        int array4[] = {1, 0, 85, 7, 5}; // 13
-        sum(array1);
-        sum(array2);
-        sum(array3);
-        sum(array4);
+        int[] array1 = {3, 5, 7, 12};  //12
+        int[] array2 = {1, 3, 4, 2, 6, 5};  //14
+        int[] array3 = {6, 7, 88, -1, 6, 5}; // 24
+        int[] array4 = {1}; // 13
+        System.out.println (sum(array1));
+        System.out.println (sum(array2));
+        System.out.println (sum(array3));
+        System.out.println (sum(array4));
     }
 
     public static int sum(int[] array) {
         int result = 0;
-        int max = array[0];
-        int min = array[0];
-        for (int i = 0; i < array.length; i++) {
-            max = Math.max (max, array[i]);
-            min = Math.min (min, array[i]);
-            result = result + array[i];
+        for (int j : array) {
+            result += j;
         }
-        result = result - max - min;
-        System.out.printf("Массив: %s Max элемент = %d Min элемент:= %d Сумма:= %d \n", Arrays.toString(array),max,min,result);
-        return result;
+        result = result  - Arrays.stream(array).min().getAsInt()- Arrays.stream(array).max().getAsInt();
+        //System.out.printf("Массив: %s Max элемент = %d Min элемент:= %d Сумма:= %d \n", Arrays.toString(array),max,min,result);
+        return  result;
     }
 
 }
